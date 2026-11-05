@@ -1,0 +1,24 @@
+{
+  "name": "TheWonderingDutchman Gear Finder",
+  "short_name": "Gear Finder",
+  "description": "Eerlijk producten vergelijken.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2eedf",
+  "theme_color": "#18382d",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
