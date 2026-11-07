@@ -5,26 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#18382d">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Gear Finder · TheWonderingDutchman</title>
 <style>
 :root{--forest:#18382d;--forest2:#244b3b;--moss:#71836b;--cream:#f2eedf;--paper:#fbf9f1;--ink:#1e2a22;--muted:#68736a;--line:#dedccc;--gold:#d9ad55}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
 header{background:linear-gradient(145deg,#142e25,#294b3a);color:#f7f2e4;padding:25px 20px 28px;border-radius:0 0 28px 28px}
-.top{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:auto}.brand{font-family:Georgia,serif;font-size:21px;letter-spacing:.2px}.tag{font-size:10px;letter-spacing:2px;color:#c7d2c2;text-transform:uppercase;margin-top:3px}
-.pill{font-size:11px;border:1px solid #78907e;border-radius:30px;padding:6px 10px;color:#e3eadf}
+.top{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:auto}.brand{font-family:Georgia,serif;font-size:21px}.tag{font-size:10px;letter-spacing:2px;color:#c7d2c2;text-transform:uppercase;margin-top:3px}.pill{font-size:11px;border:1px solid #78907e;border-radius:30px;padding:6px 10px;color:#e3eadf}
 .hero{max-width:760px;margin:28px auto 0}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c2d0bd}.hero h1{font:normal 31px/1.1 Georgia,serif;margin:9px 0}.hero p{font-size:14px;color:#d6dfd3;margin:0 0 20px}
-.search{display:flex;background:#fbf9f1;border-radius:15px;padding:6px;gap:6px;box-shadow:0 8px 22px #071b1430}.search input{min-width:0;flex:1;border:0;background:transparent;padding:12px 10px;font-size:15px;outline:none;color:var(--ink)}.search button{border:0;border-radius:11px;background:var(--forest2);color:white;padding:0 17px;font-weight:650}
+.search{display:flex;background:var(--paper);border-radius:15px;padding:6px;gap:6px;box-shadow:0 8px 22px #071b1430}.search input{min-width:0;flex:1;border:0;background:transparent;padding:12px 10px;font-size:15px;outline:none;color:var(--ink)}.search button{border:0;border-radius:11px;background:var(--forest2);color:white;padding:0 17px;font-weight:650}
 main{max-width:760px;margin:0 auto;padding:20px 16px 95px}.notice{background:#e6e0cb;border:1px solid #d4cbb0;color:#4e513f;border-radius:12px;padding:11px 13px;font-size:12px;line-height:1.45;margin-bottom:20px}
 .sectionhead{display:flex;justify-content:space-between;align-items:center;margin:21px 0 12px}.sectionhead h2{font:normal 22px Georgia,serif;margin:0}.small{font-size:12px;color:var(--muted)}
-.shortcuts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.shortcut{border:1px solid var(--line);background:var(--paper);border-radius:13px;padding:12px 5px;text-align:center;font-size:11px;color:var(--ink)}.shortcut b{display:block;font-size:20px;margin-bottom:5px;font-weight:400}
-.filters{display:flex;gap:7px;overflow:auto;padding-bottom:4px}.filter{white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:8px 12px;background:var(--paper);font-size:12px;color:var(--ink)}.filter.active{background:var(--forest);color:white;border-color:var(--forest)}
-.results{display:grid;gap:11px}.product{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:74px 1fr;gap:12px}.producticon{height:74px;border-radius:12px;background:#e9e5d6;display:grid;place-items:center;font-size:34px}.product h3{font-size:14px;margin:1px 0 4px}.meta{font-size:11px;color:var(--muted)}.price{font-size:19px;font-weight:750;margin-top:8px}.fake{font-size:10px;color:#88764c;margin-top:3px}.best{display:inline-block;background:#e1eadb;color:#31533a;border-radius:30px;padding:4px 8px;font-size:10px;font-weight:700;margin-bottom:5px}
-.actions{display:flex;gap:8px;margin-top:10px}.actions button{border:1px solid var(--line);border-radius:9px;background:white;padding:8px 10px;font-size:11px;color:var(--ink)}.actions button.primary{background:var(--forest);color:white;border-color:var(--forest)}
-.empty{padding:24px;text-align:center;border:1px dashed #b9b6a5;border-radius:14px;color:var(--muted);font-size:13px}
+.shortcuts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.shortcut{border:1px solid var(--line);background:var(--paper);border-radius:13px;padding:12px 5px;text-align:center;font-size:11px;color:var(--ink);cursor:pointer}.shortcut b{display:block;font-size:20px;margin-bottom:5px;font-weight:400}
+.results{display:grid;gap:11px}.empty{padding:26px 20px;text-align:center;border:1px dashed #b9b6a5;border-radius:14px;color:var(--muted);font-size:13px;line-height:1.6;background:#fbf9f180}
+.product{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:74px 1fr;gap:12px}.producticon{height:74px;border-radius:12px;background:#e9e5d6;display:grid;place-items:center;font-size:30px}.product h3{font-size:14px;margin:1px 0 4px}.meta{font-size:11px;color:var(--muted)}.price{font-size:19px;font-weight:750;margin-top:8px}.actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.actions a{display:inline-block;border:1px solid var(--line);border-radius:9px;background:white;padding:8px 10px;font-size:11px;color:var(--ink);text-decoration:none}.actions a.primary{background:var(--forest);color:white;border-color:var(--forest)}
 footer{position:fixed;bottom:0;left:0;right:0;background:#fbf9f1f2;border-top:1px solid var(--line);display:flex;justify-content:center;gap:min(10vw,55px);padding:10px 8px calc(10px + env(safe-area-inset-bottom));backdrop-filter:blur(12px)}
-nav button{border:0;background:none;color:var(--muted);font-size:11px;padding:3px 8px}nav b{display:block;font-size:19px;font-weight:400;margin-bottom:2px}nav button.selected{color:var(--forest);font-weight:700}
-#toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#203d30;color:white;padding:10px 15px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}#toast.show{opacity:1}
+nav button{border:0;background:none;color:var(--muted);font-size:11px;padding:3px 8px;cursor:pointer}nav b{display:block;font-size:19px;font-weight:400;margin-bottom:2px}nav button.selected{color:var(--forest);font-weight:700}
+#toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#203d30;color:white;padding:10px 15px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:5}#toast.show{opacity:1}
 @media(min-width:600px){header{padding-left:32px;padding-right:32px}main{padding-left:24px;padding-right:24px}.product{grid-template-columns:86px 1fr}.producticon{height:86px}}
 </style>
 </head>
@@ -32,47 +28,51 @@ nav button{border:0;background:none;color:var(--muted);font-size:11px;padding:3p
 <header>
  <div class="top"><div><div class="brand">TheWonderingDutchman</div><div class="tag">Explore · Choose · Live</div></div><span class="pill">GEAR FINDER</span></div>
  <section class="hero">
-  <div class="eyebrow">Honest comparisons</div>
+  <div class="eyebrow">Independent product search</div>
   <h1>Find gear that fits your journey.</h1>
-  <p>Compare prices, reviews and sellers in one place. No paid rankings.</p>
+  <p>Search honestly. Compare clearly. No paid rankings.</p>
   <form class="search" id="searchForm"><input id="query" placeholder="What are you looking for?" aria-label="Search for a product"><button type="submit">Search</button></form>
  </section>
 </header>
 <main>
- <div class="notice"><strong>Prototype – demo content.</strong> The examples below are fictional. Live store prices, reviews and sellers are not connected yet.</div>
- <div class="sectionhead"><h2>Where would you like to start?</h2><span class="small">Explore</span></div>
+ <div class="notice"><strong>Early version.</strong> The search interface is connected to Gear Finder's database. No shops or products have been added yet, so results will appear when the catalogue is populated.</div>
+ <div class="sectionhead"><h2>Explore categories</h2><span class="small">Europe</span></div>
  <div class="shortcuts">
-  <div class="shortcut" data-q="camper"><b>⌂</b>Camper</div><div class="shortcut" data-q="outdoor"><b>♧</b>Outdoor</div><div class="shortcut" data-q="tools"><b>⚒</b>Tools</div><div class="shortcut" data-q="electronics"><b>⌁</b>Electronics</div>
+  <button class="shortcut" data-q="camper"><b>⌂</b>Camper</button><button class="shortcut" data-q="outdoor"><b>♧</b>Outdoor</button><button class="shortcut" data-q="tools"><b>⚒</b>Tools</button><button class="shortcut" data-q="electronics"><b>⌁</b>Electronics</button>
  </div>
- <div class="sectionhead"><h2 id="resultTitle">Popular search ideas</h2><span class="small" id="count">3 examples</span></div>
- <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="camper">Camper</button><button class="filter" data-filter="outdoor">Outdoor</button><button class="filter" data-filter="tools">Gereedschap</button></div>
- <div class="results" id="results"></div>
+ <div class="sectionhead"><h2 id="resultTitle">Search the catalogue</h2><span class="small" id="count">No demo products</span></div>
+ <div class="results" id="results"><div class="empty">No products are listed yet.<br>Try a search when shops start sharing their catalogues.</div></div>
 </main>
 <footer><nav><button class="selected" data-tab="home"><b>⌂</b>Home</button><button data-tab="search"><b>⌕</b>Search</button><button data-tab="saved"><b>♡</b>Saved</button><button data-tab="about"><b>ⓘ</b>About</button></nav></footer>
 <div id="toast"></div>
 <script>
-const items=[
- {id:1,name:"300Ah lithium battery for campervan",cat:"camper",icon:"🔋",desc:"Sample product · 12.8V · LiFePO₄"},
- {id:2,name:"Rooftop tent for outdoor adventures",cat:"outdoor",icon:"⛺",desc:"Sample product · 2-person"},
- {id:3,name:"Cordless drill",cat:"tools",icon:"🛠️",desc:"Sample product · 18V"}
-];
-let filter="all",query="",tab="home",saved=JSON.parse(localStorage.getItem("twd_saved")||"[]");
-const results=document.getElementById("results"),title=document.getElementById("resultTitle"),count=document.getElementById("count");
-function toast(t){let x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1900)}
-function render(){
- let shown=items.filter(x=>(filter==="all"||x.cat===filter)&&(!query||(x.name+" "+x.cat+" "+x.desc).toLowerCase().includes(query)));
- if(tab==="saved")shown=items.filter(x=>saved.includes(x.id));
- if(tab==="about"){results.innerHTML='<div class="empty"><strong>Our promise</strong><br><br>No paid placements. Clear prices. Honest sourcing. We earn trust; we do not sell rankings.</div>';title.textContent="What we stand for";count.textContent="";return}
- if(tab==="search"&&!query){title.textContent="Zoeken";}else if(tab==="saved"){title.textContent="Your saved items";}else title.textContent=query?`Search ideas for “${query}”`:"Popular search ideas";
- count.textContent=shown.length+" examples";
- results.innerHTML=shown.length?shown.map(x=>`<article class="product"><div class="producticon">${x.icon}</div><div><span class="best">DEMO · NOT A LIVE OFFER</span><h3>${x.name}</h3><div class="meta">${x.desc}</div><div class="fake">Prices, reviews and stores will be connected later.</div><div class="actions"><button class="primary" onclick="toast('Live product comparison is coming in a future version.')">Compare offers</button><button onclick="toggleSave(${x.id})">${saved.includes(x.id)?"♥ Saved":"♡ Save"}</button></div></div></article>`).join(""):'<div class="empty">No demo items found. Try “camper”, “outdoor” or “battery”.</div>';
+const API_BASE="https://gear-finder-api.jaapvandam61.workers.dev";
+let query="",tab="home",saved=JSON.parse(localStorage.getItem("twd_saved")||"[]"),busy=false;
+const results=document.getElementById("results"),title=document.getElementById("resultTitle"),count=document.getElementById("count"),input=document.getElementById("query");
+function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2200)}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(price,currency){if(price===null||price===undefined||price==="")return "Price not supplied";try{return new Intl.NumberFormat(undefined,{style:"currency",currency:currency||"EUR"}).format(Number(price))}catch{return `${price} ${currency||""}`}}
+function renderProducts(products){
+ if(!products.length){results.innerHTML='<div class="empty">No matching products yet.<br>That is expected while the catalogue is still empty. We will not fill it with made-up offers.</div>';count.textContent="0 products";return}
+ count.textContent=products.length+" products";
+ results.innerHTML=products.map(p=>`<article class="product"><div class="producticon">${p.image_url?`<img src="${esc(p.image_url)}" alt="" style="width:100%;height:100%;object-fit:contain;border-radius:12px">`:"🧭"}</div><div><h3>${esc(p.title)}</h3><div class="meta">${esc([p.brand,p.retailer,p.country].filter(Boolean).join(" · "))}</div><div class="price">${money(p.price,p.currency)}</div>${p.shipping!==null&&p.shipping!==undefined?`<div class="meta">Shipping: ${money(p.shipping,p.currency)}</div>`:""}<div class="actions">${p.product_url?`<a class="primary" href="${esc(p.product_url)}" target="_blank" rel="noopener noreferrer">Visit shop</a>`:""}<a href="#" data-save="${esc(p.id)}">♡ Save</a></div></div></article>`).join("");
+ results.querySelectorAll("[data-save]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const id=String(a.dataset.save);saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem("twd_saved",JSON.stringify(saved));a.textContent=saved.includes(id)?"♥ Saved":"♡ Save"}));
 }
-function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem("twd_saved",JSON.stringify(saved));render();toast(saved.includes(id)?"Added to saved items":"Removed from saved items")}
-document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();query=document.getElementById("query").value.trim().toLowerCase();tab="search";render()});
-document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));render()}));
-document.querySelectorAll(".shortcut").forEach(b=>b.addEventListener("click",()=>{query=b.dataset.q;document.getElementById("query").value=query;tab="search";render()}));
-document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{tab=b.dataset.tab;document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("selected",x===b));if(tab==="search"){document.getElementById("query").focus()}render()}));
-render();
+async function searchProducts(q){
+ if(busy)return;busy=true;title.textContent=q?`Results for “${q}”`:"Search the catalogue";count.textContent="Searching…";results.innerHTML='<div class="empty">Searching the Gear Finder database…</div>';
+ try{
+  const url=new URL(API_BASE+"/api/search");if(q)url.searchParams.set("q",q);
+  const response=await fetch(url,{headers:{"Accept":"application/json"}});
+  if(!response.ok)throw new Error("Search service returned "+response.status);
+  const data=await response.json();const products=Array.isArray(data)?data:(data.products||data.results||[]);
+  renderProducts(products);
+ }catch(err){results.innerHTML='<div class="empty"><strong>Search service is not responding.</strong><br>Please try again in a moment. The app itself is still available.</div>';count.textContent="Connection issue";console.error(err)}
+ finally{busy=false}
+}
+document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();query=input.value.trim();tab="search";searchProducts(query)});
+document.querySelectorAll(".shortcut").forEach(b=>b.addEventListener("click",()=>{query=b.dataset.q;input.value=query;tab="search";searchProducts(query)}));
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{tab=b.dataset.tab;document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("selected",x===b));if(tab==="about"){title.textContent="Our promise";count.textContent="";results.innerHTML='<div class="empty"><strong>Independent by design.</strong><br><br>No paid placements. No invented reviews. Clear prices and honest sourcing. Shop rankings will never be for sale.</div>'}else if(tab==="saved"){title.textContent="Saved products";const ids=new Set(saved.map(String));searchProducts("").then(()=>{const cards=[...results.querySelectorAll(".product")];if(!cards.length)results.innerHTML='<div class="empty">Your saved products will appear here when the catalogue has listings.</div>'})}else if(tab==="search"){input.focus();title.textContent="Search the catalogue"}else{title.textContent="Search the catalogue";count.textContent="No demo products";results.innerHTML='<div class="empty">No products are listed yet.<br>Try a search when shops start sharing their catalogues.</div>'}}));
 </script>
-<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{})); }</script>
-</body></html>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script>
+</body>
+</html>
