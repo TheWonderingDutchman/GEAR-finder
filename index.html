@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#18382d">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<title>TheWonderingDutchman · Gear Finder</title>
+<title>Gear Finder · TheWonderingDutchman</title>
 <style>
 :root{--forest:#18382d;--forest2:#244b3b;--moss:#71836b;--cream:#f2eedf;--paper:#fbf9f1;--ink:#1e2a22;--muted:#68736a;--line:#dedccc;--gold:#d9ad55}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
@@ -32,29 +32,29 @@ nav button{border:0;background:none;color:var(--muted);font-size:11px;padding:3p
 <header>
  <div class="top"><div><div class="brand">TheWonderingDutchman</div><div class="tag">Explore · Choose · Live</div></div><span class="pill">GEAR FINDER</span></div>
  <section class="hero">
-  <div class="eyebrow">Eerlijk vergelijken</div>
-  <h1>Vind gear die bij je past.</h1>
-  <p>Vergelijk straks prijzen, reviews en verkopers op één plek. Zonder betaalde voorkeursposities.</p>
-  <form class="search" id="searchForm"><input id="query" placeholder="Wat ben je aan het zoeken?" aria-label="Zoek een product"><button type="submit">Zoek</button></form>
+  <div class="eyebrow">Honest comparisons</div>
+  <h1>Find gear that fits your journey.</h1>
+  <p>Compare prices, reviews and sellers in one place. No paid rankings.</p>
+  <form class="search" id="searchForm"><input id="query" placeholder="What are you looking for?" aria-label="Search for a product"><button type="submit">Search</button></form>
  </section>
 </header>
 <main>
- <div class="notice"><strong>Prototype – demo-inhoud.</strong> De voorbeelden hieronder zijn fictief. Er zijn nog geen live winkelprijzen, reviews of verkopers gekoppeld.</div>
- <div class="sectionhead"><h2>Waar wil je beginnen?</h2><span class="small">Ontdek</span></div>
+ <div class="notice"><strong>Prototype – demo content.</strong> The examples below are fictional. Live store prices, reviews and sellers are not connected yet.</div>
+ <div class="sectionhead"><h2>Where would you like to start?</h2><span class="small">Explore</span></div>
  <div class="shortcuts">
-  <div class="shortcut" data-q="camper"><b>⌂</b>Camper</div><div class="shortcut" data-q="outdoor"><b>♧</b>Outdoor</div><div class="shortcut" data-q="gereedschap"><b>⚒</b>Gereedschap</div><div class="shortcut" data-q="elektronica"><b>⌁</b>Elektronica</div>
+  <div class="shortcut" data-q="camper"><b>⌂</b>Camper</div><div class="shortcut" data-q="outdoor"><b>♧</b>Outdoor</div><div class="shortcut" data-q="tools"><b>⚒</b>Tools</div><div class="shortcut" data-q="electronics"><b>⌁</b>Electronics</div>
  </div>
- <div class="sectionhead"><h2 id="resultTitle">Populaire zoekideeën</h2><span class="small" id="count">3 voorbeelden</span></div>
- <div class="filters"><button class="filter active" data-filter="all">Alles</button><button class="filter" data-filter="camper">Camper</button><button class="filter" data-filter="outdoor">Outdoor</button><button class="filter" data-filter="gereedschap">Gereedschap</button></div>
+ <div class="sectionhead"><h2 id="resultTitle">Popular search ideas</h2><span class="small" id="count">3 examples</span></div>
+ <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="camper">Camper</button><button class="filter" data-filter="outdoor">Outdoor</button><button class="filter" data-filter="tools">Gereedschap</button></div>
  <div class="results" id="results"></div>
 </main>
-<footer><nav><button class="selected" data-tab="home"><b>⌂</b>Home</button><button data-tab="search"><b>⌕</b>Zoeken</button><button data-tab="saved"><b>♡</b>Favorieten</button><button data-tab="about"><b>ⓘ</b>Over ons</button></nav></footer>
+<footer><nav><button class="selected" data-tab="home"><b>⌂</b>Home</button><button data-tab="search"><b>⌕</b>Search</button><button data-tab="saved"><b>♡</b>Saved</button><button data-tab="about"><b>ⓘ</b>About</button></nav></footer>
 <div id="toast"></div>
 <script>
 const items=[
- {id:1,name:"300Ah lithiumaccu voor camper",cat:"camper",icon:"🔋",desc:"Voorbeeldproduct · 12,8V · LiFePO₄"},
- {id:2,name:"Daktent voor outdoor-avonturen",cat:"outdoor",icon:"⛺",desc:"Voorbeeldproduct · 2-persoons"},
- {id:3,name:"Draadloze accuboormachine",cat:"gereedschap",icon:"🛠️",desc:"Voorbeeldproduct · 18V"}
+ {id:1,name:"300Ah lithium battery for campervan",cat:"camper",icon:"🔋",desc:"Sample product · 12.8V · LiFePO₄"},
+ {id:2,name:"Rooftop tent for outdoor adventures",cat:"outdoor",icon:"⛺",desc:"Sample product · 2-person"},
+ {id:3,name:"Cordless drill",cat:"tools",icon:"🛠️",desc:"Sample product · 18V"}
 ];
 let filter="all",query="",tab="home",saved=JSON.parse(localStorage.getItem("twd_saved")||"[]");
 const results=document.getElementById("results"),title=document.getElementById("resultTitle"),count=document.getElementById("count");
@@ -62,12 +62,12 @@ function toast(t){let x=document.getElementById("toast");x.textContent=t;x.class
 function render(){
  let shown=items.filter(x=>(filter==="all"||x.cat===filter)&&(!query||(x.name+" "+x.cat+" "+x.desc).toLowerCase().includes(query)));
  if(tab==="saved")shown=items.filter(x=>saved.includes(x.id));
- if(tab==="about"){results.innerHTML='<div class="empty"><strong>Onze belofte</strong><br><br>Geen betaalde voorkeursposities. Duidelijke prijzen. Eerlijke bronvermelding. We verdienen vertrouwen, niet door zoekresultaten te verkopen.</div>';title.textContent="Waar we voor staan";count.textContent="";return}
- if(tab==="search"&&!query){title.textContent="Zoeken";}else if(tab==="saved"){title.textContent="Jouw favorieten";}else title.textContent=query?`Zoekideeën voor “${query}”`:"Populaire zoekideeën";
- count.textContent=shown.length+" voorbeelden";
- results.innerHTML=shown.length?shown.map(x=>`<article class="product"><div class="producticon">${x.icon}</div><div><span class="best">DEMO · GEEN LIVE AANBOD</span><h3>${x.name}</h3><div class="meta">${x.desc}</div><div class="fake">Prijs, reviews en winkels worden later live gekoppeld.</div><div class="actions"><button class="primary" onclick="toast('Live productvergelijking volgt in een volgende versie.')">Vergelijk aanbod</button><button onclick="toggleSave(${x.id})">${saved.includes(x.id)?"♥ Bewaard":"♡ Bewaar"}</button></div></div></article>`).join(""):'<div class="empty">Nog geen demo-items gevonden. Probeer bijvoorbeeld “camper”, “outdoor” of “accu”.</div>';
+ if(tab==="about"){results.innerHTML='<div class="empty"><strong>Our promise</strong><br><br>No paid placements. Clear prices. Honest sourcing. We earn trust; we do not sell rankings.</div>';title.textContent="What we stand for";count.textContent="";return}
+ if(tab==="search"&&!query){title.textContent="Zoeken";}else if(tab==="saved"){title.textContent="Your saved items";}else title.textContent=query?`Search ideas for “${query}”`:"Popular search ideas";
+ count.textContent=shown.length+" examples";
+ results.innerHTML=shown.length?shown.map(x=>`<article class="product"><div class="producticon">${x.icon}</div><div><span class="best">DEMO · NOT A LIVE OFFER</span><h3>${x.name}</h3><div class="meta">${x.desc}</div><div class="fake">Prices, reviews and stores will be connected later.</div><div class="actions"><button class="primary" onclick="toast('Live product comparison is coming in a future version.')">Compare offers</button><button onclick="toggleSave(${x.id})">${saved.includes(x.id)?"♥ Saved":"♡ Save"}</button></div></div></article>`).join(""):'<div class="empty">No demo items found. Try “camper”, “outdoor” or “battery”.</div>';
 }
-function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem("twd_saved",JSON.stringify(saved));render();toast(saved.includes(id)?"Toegevoegd aan favorieten":"Verwijderd uit favorieten")}
+function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem("twd_saved",JSON.stringify(saved));render();toast(saved.includes(id)?"Added to saved items":"Removed from saved items")}
 document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();query=document.getElementById("query").value.trim().toLowerCase();tab="search";render()});
 document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));render()}));
 document.querySelectorAll(".shortcut").forEach(b=>b.addEventListener("click",()=>{query=b.dataset.q;document.getElementById("query").value=query;tab="search";render()}));
